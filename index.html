@@ -10,14 +10,19 @@
 
 <body>
     <div id="message"></div>
+
+    <script>
+        // Ensure proper variable declaration
+        axios.get("https://trycloud.com/")
+            .then((res) => {
+                const message = res.data; // Use const to declare message
+                console.log(message); // Optional: log message to console
+                document.getElementById("message").innerHTML = `<div>${message['message']}</div>`;
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error); // Handle errors gracefully
+            });
+    </script>
 </body>
 
 </html>
-axios.get("https://trycloud.com/")
-    .then((res) => {
-        const message = res.data;
-        document.getElementById("message").innerHTML = `<div>${message['message']}</div>`;
-    })
-    .catch((error) => {
-        console.error("There was an error making the request:", error);
-    });
