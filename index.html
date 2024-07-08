@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Front</title>
+</head>
+
+<body>
+    <div id="message"></div>
+</body>
+
+</html>
+<script>
+    axios.get("https://trycloud-p1ms.com/")
+    .then((res) =>{
+        message = red.data
+
+        document.getElementById("message").innerHTML = `<div>${message['message']}</div>`
+    })
+</script>
