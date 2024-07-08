@@ -13,11 +13,11 @@
 </body>
 
 </html>
-<script>
-    axios.get("https://trycloud.com/")
-    .then((res) =>{
-        message = red.data
-
-        document.getElementById("message").innerHTML = `<div>${message['message']}</div>`
+axios.get("https://trycloud.com/")
+    .then((res) => {
+        const message = res.data;
+        document.getElementById("message").innerHTML = `<div>${message['message']}</div>`;
     })
-</script>
+    .catch((error) => {
+        console.error("There was an error making the request:", error);
+    });
